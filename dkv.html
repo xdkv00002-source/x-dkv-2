@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>X DKV 2 — SMKN 3 Pamekasan</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#050816;
+    --card:#0b1025;
+    --purple:#8b5cf6;
+    --cyan:#00e5ff;
+    --pink:#ff3cac;
+    --text:#f7f7ff;
+    --muted:#9ca3b8;
+}
+
+body{
+    font-family:Poppins,sans-serif;
+    background:var(--bg);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#7c3aed;
+    filter:blur(180px);
+    opacity:.18;
+    top:-200px;
+    left:-200px;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#00e5ff;
+    filter:blur(180px);
+    opacity:.12;
+    right:-200px;
+    bottom:-100px;
+    z-index:-2;
+}
+
+/* PARTICLES */
+.particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.particle{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:#fff;
+    border-radius:50%;
+    opacity:.5;
+    animation:float 8s infinite ease-in-out;
+}
+
+.particle:nth-child(1){left:10%;top:20%;animation-delay:1s}
+.particle:nth-child(2){left:25%;top:70%;animation-delay:3s}
+.particle:nth-child(3){left:50%;top:15%;animation-delay:2s}
+.particle:nth-child(4){left:75%;top:40%;animation-delay:4s}
+.particle:nth-child(5){left:90%;top:80%;animation-delay:1s}
+.particle:nth-child(6){left:60%;top:85%;animation-delay:5s}
+.particle:nth-child(7){left:35%;top:40%;animation-delay:2s}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);opacity:.2}
+    50%{transform:translateY(-30px);opacity:.9}
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    background:rgba(5,8,22,.72);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    z-index:999;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-icon{
+    width:43px;
+    height:43px;
+    border-radius:13px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
+    background:linear-gradient(135deg,#7c3aed,#06b6d4);
+    box-shadow:0 0 25px rgba(124,58,237,.5);
+}
+
+.logo-text b{
+    font-family:Orbitron;
+    font-size:15px;
+}
+
+.logo-text span{
+    display:block;
+    font-size:9px;
+    color:#9ca3af;
+    letter-spacing:1px;
+}
+
+.nav-links{
+    display:flex;
+    gap:27px;
+}
+
+.nav-links a{
+    color:#cbd5e1;
+    text-decoration:none;
+    font-size:12px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#00e5ff;
+    text-shadow:0 0 12px #00e5ff;
+}
+
+.nav-btn{
+    border:1px solid #8b5cf6;
+    padding:9px 18px;
+    border-radius:30px;
+    font-size:11px;
+    color:white;
+    background:rgba(139,92,246,.1);
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    padding:120px 8% 60px;
+    gap:50px;
+    position:relative;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 15px;
+    border:1px solid rgba(0,229,255,.4);
+    background:rgba(0,229,255,.06);
+    border-radius:30px;
+    color:#67e8f9;
+    font-size:11px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:Orbitron;
+    font-size:clamp(45px,7vw,90px);
+    line-height:1;
+    letter-spacing:-5px;
+}
+
+.gradient{
+    background:linear-gradient(90deg,#fff,#a78bfa,#22d3ee,#f472b6);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero h2{
+    margin-top:15px;
+    font-size:19px;
+    color:#cbd5e1;
+    font-weight:500;
+}
+
+.hero p{
+    color:#94a3b8;
+    max-width:600px;
+    margin:18px 0 28px;
+    line-height:1.8;
+    font-size:14px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:13px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:13px 22px;
+    border-radius:12px;
+    text-decoration:none;
+    color:white;
+    font-size:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-main{
+    background:linear-gradient(90deg,#7c3aed,#06b6d4);
+    box-shadow:0 0 30px rgba(124,58,237,.35);
+}
+
+.btn-main:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 40px rgba(0,229,255,.4);
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.03);
+}
+
+.btn-outline:hover{
+    border-color:#00e5ff;
+}
+
+/* PAINTING SCENE */
+.paint-area{
+    height:500px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.paint-glow{
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:linear-gradient(135deg,#7c3aed,#06b6d4);
+    filter:blur(100px);
+    opacity:.2;
+}
+
+.canvas{
+    position:absolute;
+    width:300px;
+    height:210px;
+    background:
+        linear-gradient(135deg,#ff3cac33,#00e5ff33),
+        #151a31;
+    border:8px solid #8b5e3c;
+    border-radius:4px;
+    top:80px;
+    left:50%;
+    transform:translateX(-5%);
+    box-shadow:0 20px 50px #000;
+    overflow:hidden;
+}
+
+.art{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+      radial-gradient(circle at 30% 30%,#ff3cac 0 8%,transparent 9%),
+      radial-gradient(circle at 65% 35%,#00e5ff 0 11%,transparent 12%),
+      radial-gradient(circle at 50% 75%,#8b5cf6 0 18%,transparent 19%),
+      linear-gradient(135deg,#12182d,#27315a);
+    animation:artGlow 4s infinite alternate;
+}
+
+@keyframes artGlow{
+    from{filter:saturate(1)}
+    to{filter:saturate(1.6) brightness(1.15)}
+}
+
+.canvas-stand{
+    position:absolute;
+    width:7px;
+    height:260px;
+    background:#774c2e;
+    top:280px;
+    left:62%;
+    transform:rotate(2deg);
+}
+
+.canvas-leg1,
+.canvas-leg2{
+    position:absolute;
+    width:6px;
+    height:180px;
+    background:#774c2e;
+    top:330px;
+}
+
+.canvas-leg1{
+    left:57%;
+    transform:rotate(17deg);
+}
+
+.canvas-leg2{
+    left:68%;
+    transform:rotate(-17deg);
+}
+
+/* PERSON */
+.person{
+    position:absolute;
+    width:230px;
+    height:330px;
+    left:4%;
+    bottom:10px;
+    animation:bodyFloat 4s ease-in-out infinite;
+}
+
+@keyframes bodyFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-5px)}
+}
+
+.head{
+    position:absolute;
+    width:68px;
+    height:72px;
+    border-radius:50%;
+    background:#d99a72;
+    top:15px;
+    left:75px;
+    z-index:4;
+}
+
+.hair{
+    position:absolute;
+    width:75px;
+    height:65px;
+    background:#111827;
+    border-radius:50% 60% 30% 50%;
+    top:4px;
+    left:68px;
+    z-index:5;
+}
+
+.hair:after{
+    content:"";
+    position:absolute;
+    width:30px;
+    height:40px;
+    background:#111827;
+    left:3px;
+    top:35px;
+    transform:rotate(15deg);
+}
+
+.body{
+    position:absolute;
+    width:105px;
+    height:145px;
+    border-radius:35px 35px 20px 20px;
+    background:linear-gradient(145deg,#20243d,#080b18);
+    top:82px;
+    left:55px;
+}
+
+.body:after{
+    content:"X DKV 2";
+    position:absolute;
+    top:50px;
+    left:25px;
+    font-size:10px;
+    color:#a78bfa;
+    transform:rotate(-8deg);
+}
+
+.arm{
+    position:absolute;
+    width:90px;
+    height:18px;
+    background:#d99a72;
+    border-radius:20px;
+    top:105px;
+    left:110px;
+    transform-origin:left center;
+    transform:rotate(-15deg);
+    z-index:3;
+    animation:paintArm 2s ease-in-out infinite;
+}
+
+@keyframes paintArm{
+    0%,100%{transform:rotate(-15deg)}
+    50%{transform:rotate(5deg)}
+}
+
+.hand{
+    position:absolute;
+    width:22px;
+    height:22px;
+    background:#d99a72;
+    border-radius:50%;
+    right:-8px;
+    top:-2px;
+}
+
+.brush{
+    position:absolute;
+    width:85px;
+    height:4px;
+    background:#d9a066;
+    transform:rotate(-35deg);
+    right:-70px;
+    top:10px;
+}
+
+.brush:after{
+    content:"";
+    position:absolute;
+    width:12px;
+    height:12px;
+    background:#ff3cac;
+    border-radius:50% 50% 60% 10%;
+    right:-7px;
+    top:-4px;
+}
+
+.leg{
+    position:absolute;
+    width:25px;
+    height:125px;
+    background:#151827;
+    top:210px;
+    border-radius:15px;
+}
+
+.leg1{left:70px;transform:rotate(5deg)}
+.leg2{left:120px;transform:rotate(-7deg)}
+
+.paint-drop{
+    position:absolute;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#ff3cac;
+    animation:drop 3s infinite;
+}
+
+.d1{top:120px;right:20px}
+.d2{top:230px;left:15px;animation-delay:1s}
+.d3{top:70px;right:80px;animation-delay:2s}
+
+@keyframes drop{
+    0%{transform:translateY(0) scale(1);opacity:1}
+    100%{transform:translateY(90px) scale(.3);opacity:0}
+}
+
+/* SECTIONS */
+section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title small{
+    color:#22d3ee;
+    font-size:11px;
+    letter-spacing:3px;
+}
+
+.section-title h2{
+    font-family:Orbitron;
+    font-size:clamp(28px,4vw,45px);
+    margin-top:8px;
+}
+
+.section-title p{
+    color:#64748b;
+    font-size:13px;
+    margin-top:10px;
+}
+
+/* PROFILE */
+.profile{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.glass{
+    background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.015));
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:24px;
+    padding:30px;
+    backdrop-filter:blur(15px);
+    transition:.4s;
+}
+
+.glass:hover{
+    transform:translateY(-7px);
+    border-color:rgba(0,229,255,.35);
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.profile h3{
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.profile p{
+    color:#94a3b8;
+    font-size:13px;
+    line-height:1.8;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.info-box{
+    padding:18px;
+    background:rgba(255,255,255,.03);
+    border-radius:15px;
+}
+
+.info-box span{
+    display:block;
+    font-size:10px;
+    color:#64748b;
+    margin-bottom:5px;
+}
+
+.info-box b{
+    font-size:13px;
+}
+
+/* STATS */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:25px;
+}
+
+.stat{
+    text-align:center;
+    padding:25px 10px;
+    border-radius:18px;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.stat strong{
+    font-family:Orbitron;
+    font-size:30px;
+    color:#22d3ee;
+}
+
+.stat span{
+    display:block;
+    font-size:11px;
+    color:#94a3b8;
+}
+
+/* SCHEDULE */
+.schedule-wrapper{
+    overflow-x:auto;
+    padding-bottom:15px;
+}
+
+.schedule{
+    min-width:900px;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+}
+
+.day{
+    background:linear-gradient(180deg,#101631,#080c1b);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.day:hover{
+    transform:translateY(-8px);
+    border-color:#8b5cf6;
+    box-shadow:0 15px 40px rgba(124,58,237,.15);
+}
+
+.day-head{
+    padding:20px;
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+}
+
+.day:nth-child(2) .day-head{background:linear-gradient(135deg,#0891b2,#06b6d4)}
+.day:nth-child(3) .day-head{background:linear-gradient(135deg,#db2777,#9333ea)}
+.day:nth-child(4) .day-head{background:linear-gradient(135deg,#ea580c,#f59e0b)}
+.day:nth-child(5) .day-head{background:linear-gradient(135deg,#059669,#14b8a6)}
+
+.day-head h3{
+    font-family:Orbitron;
+    font-size:18px;
+}
+
+.day-head span{
+    font-size:10px;
+    opacity:.8;
+}
+
+.lesson{
+    padding:13px 15px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.lesson:last-child{
+    border-bottom:0;
+}
+
+.time{
+    font-size:9px;
+    color:#64748b;
+}
+
+.subject{
+    font-size:11px;
+    font-weight:600;
+    margin-top:4px;
+}
+
+.teacher{
+    font-size:9px;
+    color:#8b5cf6;
+    margin-top:3px;
+}
+
+/* MAPEL */
+.subject-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.subject-card{
+    min-height:150px;
+    padding:22px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+    background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.01));
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.subject-card:before{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    background:#8b5cf6;
+    filter:blur(55px);
+    right:-50px;
+    top:-50px;
+    opacity:.3;
+}
+
+.subject-card:hover{
+    transform:translateY(-8px) rotateX(4deg);
+    border-color:#00e5ff;
+}
+
+.icon{
+    width:45px;
+    height:45px;
+    border-radius:13px;
+    background:linear-gradient(135deg,#7c3aed,#06b6d4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    margin-bottom:18px;
+}
+
+.subject-card h3{
+    font-size:13px;
+}
+
+.subject-card p{
+    font-size:10px;
+    color:#64748b;
+    margin-top:5px;
+}
+
+/* TEAM */
+.team{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.member{
+    padding:15px;
+    border-radius:22px;
+    background:linear-gradient(145deg,#11172f,#080b18);
+    border:1px solid rgba(255,255,255,.08);
+    text-align:center;
+    transition:.4s;
+}
+
+.member:hover{
+    transform:translateY(-10px);
+    border-color:#ff3cac;
+}
+
+.avatar{
+    height:180px;
+    border-radius:16px;
+    background:
+      radial-gradient(circle at 50% 35%,#d99a72 0 17%,transparent 18%),
+      radial-gradient(circle at 50% 29%,#111827 0 22%,transparent 23%),
+      linear-gradient(135deg,#312e81,#0e7490);
+    margin-bottom:15px;
+    position:relative;
+    overflow:hidden;
+}
+
+.avatar:after{
+    content:"🎨";
+    position:absolute;
+    font-size:80px;
+    opacity:.12;
+    bottom:-20px;
+    right:-10px;
+}
+
+.member h3{
+    font-size:14px;
+}
+
+.member span{
+    display:inline-block;
+    color:#c084fc;
+    font-size:9px;
+    margin-top:5px;
+}
+
+/* STUDENTS */
+.student-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+}
+
+.student{
+    padding:14px;
+    border:1px solid rgba(255,255,255,.07);
+    background:rgba(255,255,255,.025);
+    border-radius:14px;
+    font-size:11px;
+    color:#cbd5e1;
+    transition:.3s;
+}
+
+.student:hover{
+    transform:scale(1.04);
+    border-color:#00e5ff;
+    color:#fff;
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    grid-template-rows:200px 200px;
+    gap:15px;
+}
+
+.photo{
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+    background:
+        linear-gradient(135deg,#312e81,#0e7490);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:55px;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.4s;
+}
+
+.photo:nth-child(2){background:linear-gradient(135deg,#831843,#312e81)}
+.photo:nth-child(3){background:linear-gradient(135deg,#064e3b,#164e63)}
+.photo:nth-child(4){background:linear-gradient(135deg,#713f12,#4c1d95)}
+.photo:nth-child(5){background:linear-gradient(135deg,#0f172a,#155e75)}
+
+.photo:first-child{
+    grid-row:span 2;
+}
+
+.photo:hover{
+    transform:scale(1.02);
+}
+
+.photo span{
+    position:absolute;
+    bottom:15px;
+    left:15px;
+    font-size:11px;
+    background:rgba(0,0,0,.5);
+    padding:7px 12px;
+    border-radius:20px;
+}
+
+/* QUOTE */
+.quote{
+    text-align:center;
+    padding:90px 15px;
+    position:relative;
+}
+
+.quote h2{
+    font-family:Orbitron;
+    font-size:clamp(25px,4vw,45px);
+    max-width:850px;
+    margin:auto;
+    line-height:1.4;
+}
+
+.quote p{
+    color:#64748b;
+    margin-top:20px;
+}
+
+/* FOOTER */
+footer{
+    padding:45px 8%;
+    border-top:1px solid rgba(255,255,255,.08);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#64748b;
+    font-size:10px;
+}
+
+footer b{
+    color:white;
+}
+
+/* REVEAL */
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+    nav{
+        padding:0 5%;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding:110px 6% 40px;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .paint-area{
+        height:430px;
+        transform:scale(.85);
+    }
+
+    .profile{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .subject-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .team{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .student-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:200px 200px 200px;
+    }
+
+    .photo:first-child{
+        grid-row:span 1;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+}
+
+@media(max-width:500px){
+
+    section{
+        padding:70px 5%;
+    }
+
+    .hero h1{
+        letter-spacing:-3px;
+    }
+
+    .info{
+        grid-template-columns:1fr;
+    }
+
+    .subject-grid{
+        grid-template-columns:1fr;
+    }
+
+    .team{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .avatar{
+        height:140px;
+    }
+
+    .paint-area{
+        transform:scale(.7);
+        margin-top:-40px;
+        margin-bottom:-60px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">
+        <div class="logo-icon">🎨</div>
+        <div class="logo-text">
+            <b>X DKV 2</b>
+            <span>SMKN 3 PAMEKASAN</span>
+        </div>
+    </div>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#profil">Profil</a>
+        <a href="#jadwal">Jadwal</a>
+        <a href="#mapel">Mapel</a>
+        <a href="#siswa">Siswa</a>
+        <a href="#galeri">Galeri</a>
+    </div>
+
+    <div class="nav-btn">DKV 2 ✦</div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-text reveal">
+
+        <div class="badge">
+            ✦ DIGITAL CREATIVE CLASS
+        </div>
+
+        <h1>
+            X <span class="gradient">DKV 2</span>
+        </h1>
+
+        <h2>
+            Desain hari ini, karya untuk masa depan.
+        </h2>
+
+        <p>
+            Selamat datang di website resmi kelas X DKV 2
+            SMK Negeri 3 Pamekasan. Tempat berkumpulnya
+            ide, kreativitas, cerita, dan karya anak-anak DKV.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#profil" class="btn btn-main">
+                Jelajahi Kelas →
+            </a>
+
+            <a href="#jadwal" class="btn btn-outline">
+                Lihat Jadwal
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- ANIMASI ORANG MELUKIS -->
+    <div class="paint-area reveal">
+
+        <div class="paint-glow"></div>
+
+        <div class="canvas">
+            <div class="art"></div>
+        </div>
+
+        <div class="canvas-stand"></div>
+        <div class="canvas-leg1"></div>
+        <div class="canvas-leg2"></div>
+
+        <div class="person">
+
+            <div class="hair"></div>
+            <div class="head"></div>
+
+            <div class="body"></div>
+
+            <div class="arm">
+                <div class="hand"></div>
+                <div class="brush"></div>
+            </div>
+
+            <div class="leg leg1"></div>
+            <div class="leg leg2"></div>
+
+        </div>
+
+        <div class="paint-drop d1"></div>
+        <div class="paint-drop d2"></div>
+        <div class="paint-drop d3"></div>
+
+    </div>
+
+</section>
+
+
+<!-- PROFIL -->
+<section id="profil">
+
+    <div class="section-title reveal">
+        <small>ABOUT OUR CLASS</small>
+        <h2>Profil Kelas</h2>
+        <p>Kenalan lebih dekat dengan X DKV 2</p>
+    </div>
+
+    <div class="profile">
+
+        <div class="glass reveal">
+            <h3>🎨 X DKV 2</h3>
+
+            <p>
+                X DKV 2 adalah kelas yang berisi siswa-siswi
+                kreatif yang belajar tentang dunia desain,
+                komunikasi visual, teknologi, seni, dan berbagai
+                hal menarik lainnya.
+            </p>
+
+            <br>
+
+            <p>
+                Bukan cuma belajar. Di sini kita juga membuat
+                karya, bekerja sama, saling membantu, dan
+                menciptakan kenangan yang bakal susah dilupain.
+            </p>
+        </div>
+
+        <div class="glass reveal">
+
+            <div class="info">
+
+                <div class="info-box">
+                    <span>SEKOLAH</span>
+                    <b>SMK Negeri 3 Pamekasan</b>
+                </div>
+
+                <div class="info-box">
+                    <span>KELAS</span>
+                    <b>X DKV 2</b>
+                </div>
+
+                <div class="info-box">
+                    <span>WALI KELAS</span>
+                    <b>Bu Ria</b>
+                </div>
+
+                <div class="info-box">
+                    <span>JURUSAN</span>
+                    <b>Desain Komunikasi Visual</b>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="stats reveal">
+
+        <div class="stat">
+            <strong>29</strong>
+            <span>Siswa</span>
+        </div>
+
+        <div class="stat">
+            <strong>5</strong>
+            <span>Hari Belajar</span>
+        </div>
+
+        <div class="stat">
+            <strong>DKV</strong>
+            <span>Program Keahlian</span>
+        </div>
+
+        <div class="stat">
+            <strong>∞</strong>
+            <span>Kreativitas</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- JADWAL -->
+<section id="jadwal">
+
+    <div class="section-title reveal">
+        <small>WEEKLY TIMETABLE</small>
+        <h2>Jadwal Pelajaran</h2>
+        <p>Contoh jadwal lengkap Senin sampai Jumat</p>
+    </div>
+
+    <div class="schedule-wrapper reveal">
+
+        <div class="schedule">
+
+            <!-- SENIN -->
+            <div class="day">
+
+                <div class="day-head">
+                    <h3>SENIN</h3>
+                    <span>Start the week 🚀</span>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">07:00 — 07:45</div>
+                    <div class="subject">Upacara Bendera</div>
+                    <div class="teacher">Kegiatan Sekolah</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">07:45 — 08:30</div>
+                    <div class="subject">Pendidikan Pancasila</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">08:30 — 09:15</div>
+                    <div class="subject">Bahasa Indonesia</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">09:15 — 10:00</div>
+                    <div class="subject">Matematika</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">10:15 — 11:00</div>
+                    <div class="subject">Bahasa Inggris</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">11:00 — 11:45</div>
+                    <div class="subject">Dasar-Dasar DKV</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">12:30 — 13:15</div>
+                    <div class="subject">Seni Budaya</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">13:15 — 14:00</div>
+                    <div class="subject">PJOK</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+            </div>
+
+
+            <!-- SELASA -->
+            <div class="day">
+
+                <div class="day-head">
+                    <h3>SELASA</h3>
+                    <span>Creative mode 🎨</span>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">07:00 — 07:45</div>
+                    <div class="subject">Bahasa Inggris</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">07:45 — 08:30</div>
+                    <div class="subject">Dasar-Dasar DKV</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">08:30 — 09:15</div>
+                    <div class="subject">Informatika</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">09:15 — 10:00</div>
+                    <div class="subject">Seni Budaya</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">10:15 — 11:00</div>
+                    <div class="subject">Matematika</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">11:00 — 11:45</div>
+                    <div class="subject">IPAS</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">12:30 — 13:15</div>
+                    <div class="subject">Pendidikan Pancasila</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">13:15 — 14:00</div>
+                    <div class="subject">Bahasa Indonesia</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+            </div>
+
+
+            <!-- RABU -->
+            <div class="day">
+
+                <div class="day-head">
+                    <h3>RABU</h3>
+                    <span>Midweek vibes ⚡</span>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">07:00 — 07:45</div>
+                    <div class="subject">Pendidikan Agama</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">07:45 — 08:30</div>
+                    <div class="subject">Dasar-Dasar DKV</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">08:30 — 09:15</div>
+                    <div class="subject">Desain Grafis</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">09:15 — 10:00</div>
+                    <div class="subject">Bahasa Indonesia</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">10:15 — 11:00</div>
+                    <div class="subject">Matematika</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">11:00 — 11:45</div>
+                    <div class="subject">IPAS</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">12:30 — 13:15</div>
+                    <div class="subject">PJOK</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">13:15 — 14:00</div>
+                    <div class="subject">Kewirausahaan</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+            </div>
+
+
+            <!-- KAMIS -->
+            <div class="day">
+
+                <div class="day-head">
+                    <h3>KAMIS</h3>
+                    <span>Almost there 🔥</span>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">07:00 — 07:45</div>
+                    <div class="subject">Informatika</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">07:45 — 08:30</div>
+                    <div class="subject">Desain Grafis</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">08:30 — 09:15</div>
+                    <div class="subject">Bahasa Indonesia</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">09:15 — 10:00</div>
+                    <div class="subject">Matematika</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">10:15 — 11:00</div>
+                    <div class="subject">Seni Budaya</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">11:00 — 11:45</div>
+                    <div class="subject">Dasar-Dasar DKV</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">12:30 — 13:15</div>
+                    <div class="subject">Pendidikan Pancasila</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">13:15 — 14:00</div>
+                    <div class="subject">Bahasa Inggris</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+            </div>
+
+
+            <!-- JUMAT -->
+            <div class="day">
+
+                <div class="day-head">
+                    <h3>JUMAT</h3>
+                    <span>Finish strong ✨</span>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">07:00 — 07:45</div>
+                    <div class="subject">Pendidikan Agama</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">07:45 — 08:30</div>
+                    <div class="subject">Bahasa Indonesia</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">08:30 — 09:15</div>
+                    <div class="subject">Desain Grafis</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">09:15 — 10:00</div>
+                    <div class="subject">Kewirausahaan</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">10:15 — 11:00</div>
+                    <div class="subject">IPAS</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">11:00 — 11:45</div>
+                    <div class="subject">Matematika</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">12:30 — 13:15</div>
+                    <div class="subject">PJOK</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+                <div class="lesson">
+                    <div class="time">13:15 — 14:00</div>
+                    <div class="subject">Bimbingan Konseling</div>
+                    <div class="teacher">Bapak/Ibu Guru</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MAPEL -->
+<section id="mapel">
+
+    <div class="section-title reveal">
+        <small>OUR SUBJECTS</small>
+        <h2>Mata Pelajaran</h2>
+        <p>Berbagai pelajaran yang menemani perjalanan X DKV 2</p>
+    </div>
+
+    <div class="subject-grid">
+
+        <div class="subject-card reveal">
+            <div class="icon">🎨</div>
+            <h3>Dasar-Dasar DKV</h3>
+            <p>Dasar dunia desain komunikasi visual.</p>
+        </div>
+
+        <div class="subject-card reveal">
+            <div class="icon">🖥️</div>
+            <h3>Desain Grafis</h3>
+            <p>Mengembangkan kreativitas visual.</p>
+        </div>
+
+        <div class="subject-card reveal">
+            <div class="icon">💻</div>
+            <h3>Informatika</h3>
+            <p>Teknologi dan dunia digital.</p>
+        </div>
+
+        <div class="subject-card reveal">
+            <div class="icon">📐</div>
+            <h3>Matematika</h3>
+            <p>Logika dan kemampuan berhitung.</p>
+        </div>
+
+        <div class="subject-card reveal">
+            <div class="icon">🇮🇩</div>
+            <h3>Bahasa Indonesia</h3>
+            <p>Bahasa, teks, dan komunikasi.</p>
+        </div>
+
+        <div class="subject-card reveal">
+            <div class="icon">🌎</div>
+            <h3>Bahasa Inggris</h3>
+            <p>Komunikasi dalam bahasa internasional.</p>
+        </div>
+
+        <div class="subject-card reveal">
+            <div class="icon">🔬</div>
+            <h3>IPAS</h3>
+            <p>Ilmu pengetahuan alam dan sosial.</p>
+        </div>
+
+        <div class="subject-card reveal">
+            <div class="icon">🇮🇩</div>
+            <h3>Pendidikan Pancasila</h3>
+            <p>Belajar nilai dan kehidupan berbangsa.</p>
+        </div>
+
+        <div class="subject-card reveal">
+            <div class="icon">🙏</div>
+            <h3>Pendidikan Agama</h3>
+            <p>Belajar agama dan pembentukan karakter.</p>
+        </div>
+
+        <div class="subject-card reveal">
+            <div class="icon">⚽</div>
+            <h3>PJOK</h3>
+            <p>Menjaga kebugaran dan kesehatan.</p>
+        </div>
+
+        <div class="subject-card reveal">
+            <div class="icon">🎭</div>
+            <h3>Seni Budaya</h3>
+            <p>Seni, budaya, dan kreativitas.</p>
+        </div>
+
+        <div class="subject-card reveal">
+            <div class="icon">💼</div>
+            <h3>Kewirausahaan</h3>
+            <p>Belajar membangun ide dan usaha.</p>
+        </div>
+
+        <div class="subject-card reveal">
+            <div class="icon">🧠</div>
+            <h3>Bimbingan Konseling</h3>
+            <p>Pengembangan diri dan karakter.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PENGURUS -->
+<section>
+
+    <div class="section-title reveal">
+        <small>CLASS ORGANIZATION</small>
+        <h2>Pengurus Kelas</h2>
+        <p>Orang-orang yang membantu kelas tetap jalan 😎</p>
+    </div>
+
+    <div class="team">
+
+        <div class="member reveal">
+            <div class="avatar">👨🏻‍🎨</div>
+            <h3>Raihan</h3>
+            <span>KETUA KELAS</span>
+        </div>
+
+        <div class="member reveal">
+            <div class="avatar">👨🏻‍💻</div>
+            <h3>Radit</h3>
+            <span>WAKIL KETUA</span>
+        </div>
+
+        <div class="member reveal">
+            <div class="avatar">👩🏻‍🎨</div>
+            <h3>Feby</h3>
+            <span>BENDAHARA 1</span>
+        </div>
+
+        <div class="member reveal">
+            <div class="avatar">👩🏻‍💻</div>
+            <h3>Jehan</h3>
+            <span>SEKRETARIS 1</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SISWA -->
+<section id="siswa">
+
+    <div class="section-title reveal">
+        <small>CLASS MEMBERS</small>
+        <h2>Anggota Kelas</h2>
+        <p>X DKV 2 — 29 siswa</p>
+    </div>
+
+    <div class="student-grid">
+
+        <div class="student">01 · Raihan</div>
+        <div class="student">02 · Radit</div>
+        <div class="student">03 · Feby</div>
+        <div class="student">04 · Billy</div>
+        <div class="student">05 · Farhan</div>
+        <div class="student">06 · Zafier</div>
+        <div class="student">07 · Paisal</div>
+        <div class="student">08 · Jehan</div>
+        <div class="student">09 · Nora</div>
+        <div class="student">10 · Febri</div>
+        <div class="student">11 · Aldo</div>
+
+        <div class="student">12 · Nama Siswa</div>
+        <div class="student">13 · Nama Siswa</div>
+        <div class="student">14 · Nama Siswa</div>
+        <div class="student">15 · Nama Siswa</div>
+        <div class="student">16 · Nama Siswa</div>
+        <div class="student">17 · Nama Siswa</div>
+        <div class="student">18 · Nama Siswa</div>
+        <div class="student">19 · Nama Siswa</div>
+        <div class="student">20 · Nama Siswa</div>
+        <div class="student">21 · Nama Siswa</div>
+        <div class="student">22 · Nama Siswa</div>
+        <div class="student">23 · Nama Siswa</div>
+        <div class="student">24 · Nama Siswa</div>
+        <div class="student">25 · Nama Siswa</div>
+        <div class="student">26 · Nama Siswa</div>
+        <div class="student">27 · Nama Siswa</div>
+        <div class="student">28 · Nama Siswa</div>
+        <div class="student">29 · Nama Siswa</div>
+
+    </div>
+
+</section>
+
+
+<!-- GALERI -->
+<section id="galeri">
+
+    <div class="section-title reveal">
+        <small>CLASS MEMORIES</small>
+        <h2>Galeri Kelas</h2>
+        <p>Foto bisa lo masukin nanti di sini 📸</p>
+    </div>
+
+    <div class="gallery">
+
+        <div class="photo reveal">
+            🎨
+            <span>Karya DKV</span>
+        </div>
+
+        <div class="photo reveal">
+            📸
+            <span>Foto Kelas</span>
+        </div>
+
+        <div class="photo reveal">
+            🖌️
+            <span>Proses Berkarya</span>
+        </div>
+
+        <div class="photo reveal">
+            👥
+            <span>Kebersamaan</span>
+        </div>
+
+        <div class="photo reveal">
+            🏫
+            <span>SMKN 3 Pamekasan</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QUOTE -->
+<section class="quote">
+
+    <h2 class="reveal">
+        “Bukan cuma belajar desain.
+        Kita sedang menciptakan cerita.”
+    </h2>
+
+    <p class="reveal">
+        — X DKV 2 ✦ SMK Negeri 3 Pamekasan
+    </p>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div>
+        <b>🎨 X DKV 2</b><br>
+        SMK Negeri 3 Pamekasan
+    </div>
+
+    <div>
+        © 2026 X DKV 2 • Made with creativity
+    </div>
+
+</footer>
+
+
+<script>
+
+/* SCROLL REVEAL */
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+},{
+    threshold:.12
+});
+
+reveals.forEach(el=>observer.observe(el));
+
+
+/* PARALLAX PAINTING */
+document.addEventListener("mousemove",(e)=>{
+
+    const person = document.querySelector(".person");
+    const canvas = document.querySelector(".canvas");
+
+    if(window.innerWidth > 900){
+
+        let x = (e.clientX / window.innerWidth - .5) * 12;
+        let y = (e.clientY / window.innerHeight - .5) * 8;
+
+        person.style.transform =
+            `translate(${x}px,${y}px)`;
+
+        canvas.style.transform =
+            `translateX(-5%) translate(${x/2}px,${y/2}px)`;
+    }
+
+});
+
+
+/* RANDOM PAINT DROPS */
+setInterval(()=>{
+
+    const area = document.querySelector(".paint-area");
+
+    const drop = document.createElement("div");
+
+    drop.style.position="absolute";
+    drop.style.width="7px";
+    drop.style.height="7px";
+    drop.style.borderRadius="50%";
+    drop.style.background=
+        Math.random()>.5 ? "#ff3cac" : "#00e5ff";
+
+    drop.style.left=
+        Math.random()*90+"%";
+
+    drop.style.top=
+        Math.random()*80+"%";
+
+    drop.style.boxShadow=
+        "0 0 15px currentColor";
+
+    area.appendChild(drop);
+
+    setTimeout(()=>{
+        drop.remove();
+    },1800);
+
+},1200);
+
+
+/* SMOOTH NAV */
+document.querySelectorAll("nav a").forEach(link=>{
+
+    link.addEventListener("click",function(e){
+
+        e.preventDefault();
+
+        const target =
+            document.querySelector(this.getAttribute("href"));
+
+        target.scrollIntoView({
+            behavior:"smooth"
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
