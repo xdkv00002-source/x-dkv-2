@@ -1,0 +1,2392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Multi Vitami — British Propolis</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Inter','sans-serif']
+            },
+            colors: {
+                brand: {
+                    50:'#f4f8f3',
+                    100:'#e6f0e3',
+                    200:'#cbdcc6',
+                    500:'#5b7f4d',
+                    600:'#496c3e',
+                    700:'#385631',
+                    800:'#293f25',
+                    900:'#182719'
+                }
+            }
+        }
+    }
+}
+</script>
+
+<style>
+
+*{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:7px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f1f5f0;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#aebca8;
+    border-radius:20px;
+}
+
+/* PRODUCT BOTTLE */
+
+.bottle{
+    position:relative;
+    width:170px;
+    height:300px;
+    border-radius:25px 25px 32px 32px;
+    background:
+        linear-gradient(
+            100deg,
+            #182019,
+            #52644d 48%,
+            #172018
+        );
+    box-shadow:
+        25px 35px 70px rgba(0,0,0,.25),
+        inset 12px 0 20px rgba(255,255,255,.08);
+    animation:float 4s ease-in-out infinite;
+}
+
+.cap{
+    position:absolute;
+    width:100px;
+    height:55px;
+    left:35px;
+    top:-48px;
+    border-radius:14px 14px 7px 7px;
+    background:
+        linear-gradient(
+            90deg,
+            #b7bcb7,
+            #ffffff,
+            #a2a8a1
+        );
+}
+
+.neck{
+    position:absolute;
+    width:75px;
+    height:45px;
+    left:47px;
+    top:-8px;
+    background:#303c31;
+    border-radius:8px 8px 0 0;
+}
+
+.label{
+    position:absolute;
+    left:15px;
+    right:15px;
+    top:88px;
+    height:150px;
+    background:#f4f5ee;
+    border-radius:12px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    color:#182019;
+    text-align:center;
+}
+
+.label small{
+    font-size:8px;
+    letter-spacing:2px;
+    font-weight:800;
+}
+
+.label strong{
+    font-size:25px;
+    font-weight:800;
+    margin:8px 0 2px;
+}
+
+.label span{
+    font-size:9px;
+    letter-spacing:1px;
+    color:#657064;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0) rotate(3deg);
+    }
+
+    50%{
+        transform:translateY(-13px) rotate(-2deg);
+    }
+
+}
+
+/* HERO ORBS */
+
+.orb{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(70px);
+    pointer-events:none;
+}
+
+/* PRODUCT CARD */
+
+.product-card{
+    transition:.35s ease;
+}
+
+.product-card:hover{
+    transform:translateY(-7px);
+}
+
+/* BUTTON */
+
+.modern-btn{
+    transition:.25s ease;
+}
+
+.modern-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* TOAST */
+
+#toast{
+    transition:.35s ease;
+}
+
+/* MOBILE */
+
+@media(max-width:640px){
+
+    .hero-title{
+        font-size:43px !important;
+        line-height:1.02;
+    }
+
+    .hero-product{
+        min-height:420px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body class="bg-[#f7f8f5] text-gray-800 antialiased">
+
+
+<!-- =====================================================
+     PROMO BAR
+===================================================== -->
+
+<div class="bg-gray-950 text-white text-xs text-center py-2.5 px-4">
+
+    <span class="text-lime-300">●</span>
+
+    Special Offer
+
+    <span class="mx-1 text-gray-500">—</span>
+
+    Dapatkan pengalaman belanja premium di
+
+    <b>Multi Vitami</b>
+
+</div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="sticky top-0 z-40 bg-white/85 backdrop-blur-xl border-b border-gray-100">
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+<div class="h-16 flex items-center justify-between gap-4">
+
+
+<!-- LOGO -->
+
+<div class="flex items-center gap-2.5 flex-shrink-0">
+
+    <div class="
+        w-10 h-10
+        rounded-xl
+        bg-gray-950
+        text-lime-300
+        flex items-center justify-center
+        font-black text-xl
+        shadow-lg
+    ">
+        M
+    </div>
+
+    <div>
+
+        <div class="font-extrabold tracking-tight text-gray-950">
+            Multi Vitami
+        </div>
+
+        <div class="text-[9px] uppercase tracking-[2px] text-gray-400">
+            Premium Wellness
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="hidden sm:block flex-1 max-w-md relative">
+
+    <input
+        id="searchInput"
+        oninput="searchProduct()"
+        type="text"
+        placeholder="Cari produk..."
+        class="
+        w-full
+        bg-gray-100
+        border border-transparent
+        focus:border-brand-500
+        focus:bg-white
+        outline-none
+        rounded-full
+        py-2.5 pl-10 pr-4
+        text-sm
+        transition
+        "
+    >
+
+    <i class="
+        fa-solid fa-magnifying-glass
+        absolute left-4 top-3
+        text-gray-400 text-sm
+    "></i>
+
+</div>
+
+
+<!-- ACTION -->
+
+<div class="flex items-center gap-2">
+
+    <button
+        onclick="openCart()"
+        class="
+        relative
+        w-11 h-11
+        rounded-full
+        hover:bg-gray-100
+        text-gray-700
+        transition
+        "
+    >
+
+        <i class="fa-solid fa-bag-shopping"></i>
+
+        <span
+            id="cartBadge"
+            class="
+            absolute -top-1 -right-1
+            w-5 h-5
+            rounded-full
+            bg-lime-400
+            text-gray-950
+            text-[10px]
+            font-bold
+            flex items-center justify-center
+            border-2 border-white
+            "
+        >
+            0
+        </span>
+
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- MOBILE SEARCH -->
+
+<div class="sm:hidden pb-3">
+
+<input
+    id="mobileSearch"
+    oninput="searchMobile()"
+    type="text"
+    placeholder="Cari British Propolis..."
+    class="
+    w-full
+    bg-gray-100
+    rounded-full
+    py-2.5 pl-4 pr-4
+    text-sm
+    outline-none
+    "
+>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="
+relative
+max-w-7xl
+mx-auto
+px-4 sm:px-6 lg:px-8
+pt-6
+">
+
+<div class="
+relative
+overflow-hidden
+rounded-[30px]
+bg-gray-950
+text-white
+min-h-[570px]
+flex
+items-center
+">
+
+
+<!-- BACKGROUND -->
+
+<div class="orb w-96 h-96 bg-lime-400/20 -right-20 -top-20"></div>
+
+<div class="orb w-80 h-80 bg-emerald-500/10 left-20 bottom-0"></div>
+
+
+<div class="
+relative z-10
+w-full
+grid
+lg:grid-cols-2
+gap-8
+items-center
+p-8 sm:p-12 lg:p-16
+">
+
+
+<!-- HERO TEXT -->
+
+<div>
+
+<div class="
+inline-flex
+items-center
+gap-2
+px-3 py-1.5
+rounded-full
+bg-white/5
+border border-white/10
+text-xs
+text-lime-300
+font-semibold
+mb-5
+">
+
+    <span>✦</span>
+
+    BRITISH PROPOLIS
+
+</div>
+
+
+<h1 class="
+hero-title
+text-5xl
+sm:text-6xl
+lg:text-7xl
+font-extrabold
+tracking-[-3px]
+leading-[.98]
+">
+
+    Premium
+    <span class="text-lime-300">
+        Propolis.
+    </span>
+
+</h1>
+
+
+<p class="
+mt-6
+text-gray-400
+leading-7
+max-w-lg
+text-sm sm:text-base
+">
+
+    Kenalan dengan British Propolis dari
+    <b class="text-white">Multi Vitami</b>.
+    Pilihan produk dengan pengalaman belanja
+    yang simpel, modern, dan nyaman.
+
+</p>
+
+
+<div class="flex flex-wrap gap-3 mt-8">
+
+<button
+    onclick="scrollProduct()"
+    class="
+    modern-btn
+    px-6 py-3.5
+    rounded-full
+    bg-lime-300
+    hover:bg-lime-200
+    text-gray-950
+    font-bold
+    text-sm
+    "
+>
+
+    Lihat Produk
+
+    <i class="fa-solid fa-arrow-right ml-2"></i>
+
+</button>
+
+
+<button
+    onclick="addToCart(1)"
+    class="
+    modern-btn
+    px-6 py-3.5
+    rounded-full
+    bg-white/10
+    hover:bg-white/15
+    border border-white/10
+    font-semibold
+    text-sm
+    "
+>
+
+    <i class="fa-solid fa-bag-shopping mr-2"></i>
+
+    + Keranjang
+
+</button>
+
+</div>
+
+
+<!-- TRUST -->
+
+<div class="
+flex flex-wrap
+gap-5
+mt-10
+text-xs
+text-gray-400
+">
+
+<span>
+    <i class="fa-solid fa-circle-check text-lime-300 mr-1"></i>
+    Premium Product
+</span>
+
+<span>
+    <i class="fa-solid fa-circle-check text-lime-300 mr-1"></i>
+    Easy Order
+</span>
+
+<span>
+    <i class="fa-solid fa-circle-check text-lime-300 mr-1"></i>
+    WhatsApp Support
+</span>
+
+</div>
+
+</div>
+
+
+<!-- HERO PRODUCT -->
+
+<div class="
+hero-product
+relative
+min-h-[480px]
+flex
+items-center
+justify-center
+">
+
+
+<div class="
+absolute
+w-[330px]
+h-[330px]
+rounded-full
+border
+border-white/10
+"></div>
+
+<div class="
+absolute
+w-[450px]
+h-[450px]
+rounded-full
+border
+border-white/5
+"></div>
+
+
+<!-- FLOAT CARD -->
+
+<div class="
+absolute
+left-2 sm:left-8
+top-24
+bg-white/10
+backdrop-blur-xl
+border border-white/10
+rounded-2xl
+px-4 py-3
+text-xs
+font-semibold
+">
+
+    ✦ Premium Choice
+
+</div>
+
+
+<div class="
+absolute
+right-0 sm:right-8
+bottom-24
+bg-lime-300
+text-gray-950
+rounded-2xl
+px-4 py-3
+text-xs
+font-bold
+shadow-xl
+">
+
+    BEST SELLER
+
+</div>
+
+
+<!-- BOTTLE -->
+
+<div class="bottle">
+
+    <div class="cap"></div>
+
+    <div class="neck"></div>
+
+    <div class="label">
+
+        <small>MULTI VITAMI</small>
+
+        <strong>BRITISH</strong>
+
+        <span>PROPOLIS</span>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     QUICK INFO
+===================================================== -->
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+<div class="
+grid
+grid-cols-2
+lg:grid-cols-4
+gap-3
+mt-5
+">
+
+<div class="bg-white rounded-2xl p-5 border border-gray-100">
+
+    <div class="text-brand-600 mb-3">
+        <i class="fa-solid fa-shield-halved text-xl"></i>
+    </div>
+
+    <div class="font-bold text-sm">
+        Premium
+    </div>
+
+    <div class="text-xs text-gray-400 mt-1">
+        Produk pilihan
+    </div>
+
+</div>
+
+
+<div class="bg-white rounded-2xl p-5 border border-gray-100">
+
+    <div class="text-brand-600 mb-3">
+        <i class="fa-solid fa-bolt text-xl"></i>
+    </div>
+
+    <div class="font-bold text-sm">
+        Simple Order
+    </div>
+
+    <div class="text-xs text-gray-400 mt-1">
+        Pesan tanpa ribet
+    </div>
+
+</div>
+
+
+<div class="bg-white rounded-2xl p-5 border border-gray-100">
+
+    <div class="text-brand-600 mb-3">
+        <i class="fa-solid fa-headset text-xl"></i>
+    </div>
+
+    <div class="font-bold text-sm">
+        Support
+    </div>
+
+    <div class="text-xs text-gray-400 mt-1">
+        Bantuan via WhatsApp
+    </div>
+
+</div>
+
+
+<div class="bg-white rounded-2xl p-5 border border-gray-100">
+
+    <div class="text-brand-600 mb-3">
+        <i class="fa-solid fa-heart text-xl"></i>
+    </div>
+
+    <div class="font-bold text-sm">
+        Multi Vitami
+    </div>
+
+    <div class="text-xs text-gray-400 mt-1">
+        Wellness store
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PRODUCT SECTION
+===================================================== -->
+
+<main
+id="products"
+class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
+>
+
+
+<div class="
+flex
+flex-col
+sm:flex-row
+sm:items-end
+justify-between
+gap-5
+mb-8
+">
+
+<div>
+
+<div class="
+text-xs
+uppercase
+tracking-[2px]
+font-bold
+text-brand-600
+">
+
+    Our Product
+
+</div>
+
+<h2 class="
+text-3xl
+sm:text-4xl
+font-extrabold
+tracking-tight
+text-gray-950
+mt-2
+">
+
+    British Propolis
+
+</h2>
+
+<p class="text-sm text-gray-500 mt-2">
+
+    Produk unggulan dari Multi Vitami.
+
+</p>
+
+</div>
+
+
+<div class="flex gap-2">
+
+<button
+onclick="setFilter('all')"
+id="filterAll"
+class="
+px-4 py-2
+rounded-full
+bg-gray-950
+text-white
+text-xs
+font-semibold
+"
+>
+Semua
+</button>
+
+<button
+onclick="setFilter('promo')"
+id="filterPromo"
+class="
+px-4 py-2
+rounded-full
+bg-gray-100
+text-gray-600
+text-xs
+font-semibold
+"
+>
+Promo
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT GRID -->
+
+<div
+id="productGrid"
+class="
+grid
+grid-cols-1
+sm:grid-cols-2
+lg:grid-cols-3
+gap-5
+"
+>
+
+
+<!-- PRODUCT -->
+
+<div
+class="
+product-card
+bg-white
+border border-gray-100
+rounded-[25px]
+overflow-hidden
+shadow-sm
+"
+data-type="promo"
+data-name="British Propolis"
+>
+
+
+<!-- IMAGE -->
+
+<div class="
+relative
+bg-[#edf1eb]
+aspect-square
+flex
+items-center
+justify-center
+overflow-hidden
+">
+
+
+<div class="
+absolute
+w-64 h-64
+rounded-full
+bg-white/70
+"></div>
+
+
+<div class="bottle scale-[.72]">
+
+    <div class="cap"></div>
+
+    <div class="neck"></div>
+
+    <div class="label">
+
+        <small>MULTI VITAMI</small>
+
+        <strong>BRITISH</strong>
+
+        <span>PROPOLIS</span>
+
+    </div>
+
+</div>
+
+
+<div class="
+absolute
+top-4
+left-4
+bg-gray-950
+text-lime-300
+px-3 py-1.5
+rounded-full
+text-[10px]
+font-bold
+">
+
+    BEST SELLER
+
+</div>
+
+
+<div class="
+absolute
+top-4
+right-4
+w-9 h-9
+rounded-full
+bg-white
+flex
+items-center
+justify-center
+text-gray-500
+"
+>
+
+    <i class="fa-regular fa-heart"></i>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT INFO -->
+
+<div class="p-5">
+
+<div class="
+flex
+items-center
+gap-1
+text-amber-400
+text-xs
+mb-2
+">
+
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+
+    <span class="text-gray-400 ml-1">
+        4.9
+    </span>
+
+</div>
+
+
+<h3 class="
+font-bold
+text-lg
+text-gray-950
+">
+
+    British Propolis
+
+</h3>
+
+
+<p class="
+text-xs
+text-gray-500
+leading-5
+mt-2
+">
+
+    Produk unggulan Multi Vitami
+    dengan konsep premium dan modern.
+
+</p>
+
+
+<div class="
+flex
+items-end
+justify-between
+mt-5
+gap-3
+">
+
+<div>
+
+<div class="
+text-xl
+font-extrabold
+text-gray-950
+"
+id="productPrice"
+>
+Rp 150.000
+</div>
+
+<div class="
+text-xs
+text-gray-400
+line-through
+"
+>
+Rp 200.000
+</div>
+
+</div>
+
+
+<button
+onclick="addToCart(1)"
+class="
+modern-btn
+w-11 h-11
+rounded-xl
+bg-gray-950
+hover:bg-brand-600
+text-white
+flex
+items-center
+justify-center
+"
+>
+
+<i class="fa-solid fa-plus"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SECOND CARD -->
+
+<div
+class="
+product-card
+bg-gray-950
+text-white
+rounded-[25px]
+p-7
+min-h-[430px]
+flex
+flex-col
+justify-between
+relative
+overflow-hidden
+"
+data-type="promo"
+data-name="Wellness Bundle"
+>
+
+
+<div class="
+absolute
+w-60 h-60
+rounded-full
+bg-lime-300/10
+blur-3xl
+-right-20
+-top-20
+"></div>
+
+
+<div>
+
+<div class="
+inline-block
+bg-lime-300
+text-gray-950
+text-[10px]
+font-bold
+px-3 py-1.5
+rounded-full
+"
+>
+
+    COMING SOON
+
+</div>
+
+
+<h3 class="
+text-3xl
+font-extrabold
+tracking-tight
+mt-6
+">
+
+    Wellness<br>
+    Collection.
+
+</h3>
+
+
+<p class="
+text-gray-400
+text-sm
+leading-6
+mt-4
+">
+
+    Koleksi produk wellness
+    pilihan Multi Vitami akan
+    hadir berikutnya.
+
+</p>
+
+</div>
+
+
+<div>
+
+<div class="
+text-5xl
+font-black
+text-lime-300
+"
+>
+
+    01
+
+</div>
+
+<div class="
+text-xs
+text-gray-500
+mt-2
+"
+>
+
+    Featured product
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- THIRD CARD -->
+
+<div
+class="
+product-card
+bg-[#e7eee4]
+rounded-[25px]
+p-7
+min-h-[430px]
+relative
+overflow-hidden
+"
+data-type="all"
+data-name="Multi Vitami"
+>
+
+<div class="
+text-xs
+uppercase
+tracking-[2px]
+font-bold
+text-brand-700
+"
+>
+Multi Vitami
+</div>
+
+
+<h3 class="
+text-3xl
+font-extrabold
+tracking-tight
+mt-4
+text-gray-950
+"
+>
+
+    Simple<br>
+    Wellness.
+
+</h3>
+
+
+<p class="
+text-sm
+text-gray-600
+leading-6
+mt-4
+">
+
+    Pengalaman belanja produk
+    wellness dengan desain
+    modern dan simpel.
+
+</p>
+
+
+<div class="
+absolute
+-bottom-20
+-right-10
+w-56 h-56
+rounded-full
+border
+border-brand-600/20
+"></div>
+
+<div class="
+absolute
+-bottom-12
+-right-4
+w-40 h-40
+rounded-full
+border
+border-brand-600/15
+"></div>
+
+
+<div class="
+absolute
+bottom-7
+left-7
+text-brand-700
+"
+>
+
+    <i class="fa-solid fa-leaf text-4xl"></i>
+
+</div>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<!-- =====================================================
+     WHY US
+===================================================== -->
+
+<section class="
+max-w-7xl
+mx-auto
+px-4 sm:px-6 lg:px-8
+pb-20
+">
+
+<div class="
+bg-white
+border border-gray-100
+rounded-[30px]
+p-7 sm:p-10 lg:p-14
+"
+>
+
+<div class="
+grid
+lg:grid-cols-2
+gap-12
+items-center
+">
+
+
+<div>
+
+<div class="
+text-xs
+uppercase
+tracking-[2px]
+font-bold
+text-brand-600
+">
+
+    Why Multi Vitami?
+
+</div>
+
+
+<h2 class="
+text-3xl
+sm:text-4xl
+font-extrabold
+tracking-tight
+mt-3
+text-gray-950
+">
+
+    Dibuat simpel.<br>
+    Terasa premium.
+
+</h2>
+
+
+<p class="
+text-sm
+text-gray-500
+leading-7
+mt-5
+max-w-lg
+">
+
+    Kami bikin pengalaman belanja
+    British Propolis jadi lebih gampang,
+    modern, dan nyaman dari HP.
+
+</p>
+
+</div>
+
+
+<div class="grid grid-cols-2 gap-3">
+
+
+<div class="
+bg-[#f5f7f3]
+rounded-2xl
+p-5
+"
+>
+
+<div class="text-brand-600 text-xl">
+    <i class="fa-solid fa-mobile-screen"></i>
+</div>
+
+<h3 class="font-bold text-sm mt-5">
+    Mobile Friendly
+</h3>
+
+<p class="text-xs text-gray-500 mt-2 leading-5">
+    Nyaman dibuka dari HP.
+</p>
+
+</div>
+
+
+<div class="
+bg-gray-950
+text-white
+rounded-2xl
+p-5
+"
+>
+
+<div class="text-lime-300 text-xl">
+    <i class="fa-solid fa-cart-shopping"></i>
+</div>
+
+<h3 class="font-bold text-sm mt-5">
+    Easy Shopping
+</h3>
+
+<p class="text-xs text-gray-400 mt-2 leading-5">
+    Masuk keranjang lalu checkout.
+</p>
+
+</div>
+
+
+<div class="
+bg-lime-200
+rounded-2xl
+p-5
+"
+>
+
+<div class="text-gray-900 text-xl">
+    <i class="fa-solid fa-comments"></i>
+</div>
+
+<h3 class="font-bold text-sm mt-5">
+    WhatsApp
+</h3>
+
+<p class="text-xs text-gray-600 mt-2 leading-5">
+    Order langsung lewat WA.
+</p>
+
+</div>
+
+
+<div class="
+bg-[#e7eee4]
+rounded-2xl
+p-5
+"
+>
+
+<div class="text-brand-700 text-xl">
+    <i class="fa-solid fa-sparkles"></i>
+</div>
+
+<h3 class="font-bold text-sm mt-5">
+    Modern
+</h3>
+
+<p class="text-xs text-gray-600 mt-2 leading-5">
+    Tampilan clean dan premium.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section
+class="
+max-w-7xl
+mx-auto
+px-4 sm:px-6 lg:px-8
+pb-20
+"
+>
+
+<div class="
+relative
+overflow-hidden
+bg-gray-950
+rounded-[30px]
+p-9 sm:p-14
+text-center
+text-white
+"
+>
+
+<div class="
+absolute
+w-80 h-80
+rounded-full
+bg-lime-300/10
+blur-3xl
+left-1/2
+-top-40
+"
+></div>
+
+
+<div class="relative z-10">
+
+<div class="
+text-lime-300
+text-xs
+font-bold
+tracking-[2px]
+uppercase
+"
+>
+
+    Multi Vitami
+
+</div>
+
+
+<h2 class="
+text-4xl
+sm:text-5xl
+font-extrabold
+tracking-tight
+mt-3
+">
+
+    Ready to try<br>
+    British Propolis?
+
+</h2>
+
+
+<p class="
+text-gray-400
+text-sm
+max-w-md
+mx-auto
+mt-4
+leading-6
+">
+
+    Masukkan produk ke keranjang
+    dan lanjutkan pesanan lewat WhatsApp.
+
+</p>
+
+
+<button
+onclick="addToCart(1)"
+class="
+modern-btn
+mt-7
+px-7 py-3.5
+rounded-full
+bg-lime-300
+hover:bg-lime-200
+text-gray-950
+font-bold
+text-sm
+"
+>
+
+    Beli Sekarang
+
+    <i class="fa-solid fa-arrow-right ml-2"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="
+bg-white
+border-t border-gray-100
+"
+>
+
+<div class="
+max-w-7xl
+mx-auto
+px-4 sm:px-6 lg:px-8
+py-10
+"
+>
+
+<div class="
+flex
+flex-col
+sm:flex-row
+justify-between
+gap-7
+"
+>
+
+
+<div>
+
+<div class="
+flex
+items-center
+gap-2
+font-extrabold
+text-gray-950
+"
+>
+
+<div class="
+w-9 h-9
+rounded-xl
+bg-gray-950
+text-lime-300
+flex items-center justify-center
+"
+>
+M
+</div>
+
+Multi Vitami
+
+</div>
+
+
+<p class="
+text-xs
+text-gray-400
+mt-4
+max-w-xs
+leading-5
+">
+
+    Premium wellness store
+    untuk pengalaman belanja yang simpel.
+
+</p>
+
+</div>
+
+
+<div class="
+text-xs
+text-gray-400
+"
+>
+
+    © 2026 Multi Vitami
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- =====================================================
+     CART SIDEBAR
+===================================================== -->
+
+<div
+id="cartOverlay"
+class="
+fixed inset-0
+z-50
+bg-black/50
+backdrop-blur-sm
+opacity-0
+invisible
+transition
+"
+onclick="closeCart()"
+></div>
+
+
+<div
+id="cartDrawer"
+class="
+fixed
+z-[60]
+right-0
+top-0
+h-full
+w-full
+max-w-md
+bg-white
+translate-x-full
+transition-transform
+duration-300
+flex
+flex-col
+"
+>
+
+
+<!-- CART HEADER -->
+
+<div class="
+p-5
+border-b
+border-gray-100
+flex
+items-center
+justify-between
+"
+>
+
+<div>
+
+<h3 class="
+font-extrabold
+text-lg
+"
+>
+Keranjang
+</h3>
+
+<p class="
+text-xs
+text-gray-400
+mt-1
+"
+>
+Pesanan kamu
+</p>
+
+</div>
+
+
+<button
+onclick="closeCart()"
+class="
+w-9 h-9
+rounded-full
+bg-gray-100
+hover:bg-gray-200
+"
+>
+
+<i class="fa-solid fa-xmark"></i>
+
+</button>
+
+</div>
+
+
+<!-- CART ITEMS -->
+
+<div
+id="cartItems"
+class="
+flex-1
+overflow-y-auto
+p-5
+"
+>
+</div>
+
+
+<!-- CART FOOTER -->
+
+<div class="
+border-t
+border-gray-100
+p-5
+bg-gray-50
+"
+>
+
+<div class="
+flex
+justify-between
+text-sm
+mb-4
+"
+>
+
+<span class="text-gray-500">
+    Total
+</span>
+
+<strong
+id="cartTotal"
+class="text-gray-950"
+>
+    Rp 0
+</strong>
+
+</div>
+
+
+<button
+onclick="checkoutWhatsApp()"
+class="
+w-full
+py-3.5
+rounded-xl
+bg-[#25D366]
+hover:bg-[#20bd5b]
+text-white
+font-bold
+text-sm
+transition
+"
+>
+
+<i class="fa-brands fa-whatsapp mr-2"></i>
+
+Checkout via WhatsApp
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+id="toast"
+class="
+fixed
+bottom-5
+left-1/2
+-translate-x-1/2
+z-[100]
+translate-y-20
+opacity-0
+bg-gray-950
+text-white
+px-5 py-3
+rounded-full
+shadow-2xl
+text-xs
+font-semibold
+"
+>
+
+<i class="fa-solid fa-circle-check text-lime-300 mr-2"></i>
+
+<span id="toastText">
+Berhasil
+</span>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+const products = [
+
+{
+    id:1,
+    name:"British Propolis",
+    price:150000,
+    oldPrice:200000
+}
+
+];
+
+
+let cart = [];
+
+
+/* =========================
+   FORMAT RUPIAH
+========================= */
+
+function rupiah(number){
+
+    return new Intl.NumberFormat(
+        "id-ID",
+        {
+            style:"currency",
+            currency:"IDR",
+            maximumFractionDigits:0
+        }
+    ).format(number);
+
+}
+
+
+/* =========================
+   ADD TO CART
+========================= */
+
+function addToCart(id){
+
+    const product =
+        products.find(p => p.id === id);
+
+    if(!product) return;
+
+
+    const existing =
+        cart.find(item => item.id === id);
+
+
+    if(existing){
+
+        existing.qty++;
+
+    }else{
+
+        cart.push({
+            ...product,
+            qty:1
+        });
+
+    }
+
+
+    updateCart();
+
+    showToast(
+        "British Propolis ditambahkan 🛒"
+    );
+
+}
+
+
+/* =========================
+   UPDATE CART
+========================= */
+
+function updateCart(){
+
+    const badge =
+        document.getElementById("cartBadge");
+
+    const items =
+        document.getElementById("cartItems");
+
+    const total =
+        document.getElementById("cartTotal");
+
+
+    const totalQty =
+        cart.reduce(
+            (sum,item)=>sum+item.qty,
+            0
+        );
+
+
+    badge.innerText = totalQty;
+
+
+    if(cart.length === 0){
+
+        items.innerHTML = `
+
+        <div class="
+        text-center
+        py-20
+        text-gray-400
+        ">
+
+            <i class="
+            fa-solid fa-bag-shopping
+            text-4xl
+            mb-4
+            "></i>
+
+            <p class="text-sm">
+                Keranjang masih kosong
+            </p>
+
+        </div>
+
+        `;
+
+    }else{
+
+        items.innerHTML = cart.map(item => `
+
+        <div class="
+        flex
+        gap-4
+        py-4
+        border-b
+        border-gray-100
+        ">
+
+
+            <div class="
+            w-16 h-16
+            rounded-xl
+            bg-[#edf1eb]
+            flex
+            items-center
+            justify-center
+            flex-shrink-0
+            ">
+
+                <i class="
+                fa-solid fa-leaf
+                text-brand-600
+                "></i>
+
+            </div>
+
+
+            <div class="flex-1">
+
+                <h4 class="
+                font-bold
+                text-sm
+                ">
+
+                    ${item.name}
+
+                </h4>
+
+
+                <p class="
+                text-xs
+                text-gray-400
+                mt-1
+                ">
+
+                    ${rupiah(item.price)}
+
+                </p>
+
+
+                <div class="
+                flex
+                items-center
+                gap-3
+                mt-3
+                ">
+
+
+                    <button
+                    onclick="changeQty(${item.id},-1)"
+                    class="
+                    w-7 h-7
+                    rounded-lg
+                    bg-gray-100
+                    "
+                    >
+                        −
+                    </button>
+
+
+                    <span class="
+                    text-xs
+                    font-bold
+                    ">
+                        ${item.qty}
+                    </span>
+
+
+                    <button
+                    onclick="changeQty(${item.id},1)"
+                    class="
+                    w-7 h-7
+                    rounded-lg
+                    bg-gray-100
+                    "
+                    >
+                        +
+                    </button>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `).join("");
+
+    }
+
+
+    const totalPrice =
+        cart.reduce(
+            (sum,item)=>
+            sum + item.price * item.qty,
+            0
+        );
+
+
+    total.innerText =
+        rupiah(totalPrice);
+
+}
+
+
+/* =========================
+   CHANGE QTY
+========================= */
+
+function changeQty(id,change){
+
+    const item =
+        cart.find(item => item.id === id);
+
+
+    if(!item) return;
+
+
+    item.qty += change;
+
+
+    if(item.qty <= 0){
+
+        cart =
+            cart.filter(
+                item => item.id !== id
+            );
+
+    }
+
+
+    updateCart();
+
+}
+
+
+/* =========================
+   OPEN CART
+========================= */
+
+function openCart(){
+
+    document
+    .getElementById("cartOverlay")
+    .classList
+    .remove("opacity-0","invisible");
+
+
+    document
+    .getElementById("cartDrawer")
+    .classList
+    .remove("translate-x-full");
+
+}
+
+
+/* =========================
+   CLOSE CART
+========================= */
+
+function closeCart(){
+
+    document
+    .getElementById("cartOverlay")
+    .classList
+    .add("opacity-0","invisible");
+
+
+    document
+    .getElementById("cartDrawer")
+    .classList
+    .add("translate-x-full");
+
+}
+
+
+/* =========================
+   CHECKOUT WHATSAPP
+========================= */
+
+function checkoutWhatsApp(){
+
+    if(cart.length === 0){
+
+        showToast(
+            "Keranjang masih kosong 😭"
+        );
+
+        return;
+
+    }
+
+
+    let message =
+        "Halo Multi Vitami 👋%0A%0A" +
+        "Saya mau pesan:%0A";
+
+
+    let total = 0;
+
+
+    cart.forEach(item => {
+
+        message +=
+            "• " +
+            item.name +
+            " x" +
+            item.qty +
+            " = " +
+            rupiah(
+                item.price * item.qty
+            ) +
+            "%0A";
+
+
+        total +=
+            item.price * item.qty;
+
+    });
+
+
+    message +=
+        "%0ATotal: " +
+        rupiah(total);
+
+
+    /*
+       GANTI NOMOR INI
+       DENGAN NOMOR WHATSAPP LU
+
+       Contoh:
+       6281234567890
+    */
+
+    const phone =
+        "628977175584";
+
+
+    window.open(
+        "https://wa.me/" +
+        phone +
+        "?text=" +
+        message,
+        "_blank"
+    );
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function searchProduct(){
+
+    const query =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+
+    const cards =
+        document.querySelectorAll(
+            "[data-name]"
+        );
+
+
+    cards.forEach(card => {
+
+        const name =
+            card
+            .dataset
+            .name
+            .toLowerCase();
+
+
+        if(name.includes(query)){
+
+            card.style.display = "";
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+function searchMobile(){
+
+    const query =
+        document
+        .getElementById("mobileSearch")
+        .value
+        .toLowerCase();
+
+
+    const cards =
+        document.querySelectorAll(
+            "[data-name]"
+        );
+
+
+    cards.forEach(card => {
+
+        const name =
+            card.dataset.name.toLowerCase();
+
+
+        card.style.display =
+            name.includes(query)
+            ? ""
+            : "none";
+
+    });
+
+}
+
+
+/* =========================
+   FILTER
+========================= */
+
+function setFilter(type){
+
+    const cards =
+        document.querySelectorAll(
+            "[data-type]"
+        );
+
+
+    cards.forEach(card => {
+
+        if(type === "all"){
+
+            card.style.display = "";
+
+        }else{
+
+            card.style.display =
+                card.dataset.type === type
+                ? ""
+                : "none";
+
+        }
+
+    });
+
+
+    document
+    .getElementById("filterAll")
+    .className =
+        type === "all"
+        ?
+        "px-4 py-2 rounded-full bg-gray-950 text-white text-xs font-semibold"
+        :
+        "px-4 py-2 rounded-full bg-gray-100 text-gray-600 text-xs font-semibold";
+
+
+    document
+    .getElementById("filterPromo")
+    .className =
+        type === "promo"
+        ?
+        "px-4 py-2 rounded-full bg-gray-950 text-white text-xs font-semibold"
+        :
+        "px-4 py-2 rounded-full bg-gray-100 text-gray-600 text-xs font-semibold";
+
+}
+
+
+/* =========================
+   SCROLL PRODUCT
+========================= */
+
+function scrollProduct(){
+
+    document
+    .getElementById("products")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+
+    document
+    .getElementById("toastText")
+    .innerText = message;
+
+
+    toast.classList.remove(
+        "translate-y-20",
+        "opacity-0"
+    );
+
+
+    setTimeout(()=>{
+
+        toast.classList.add(
+            "translate-y-20",
+            "opacity-0"
+        );
+
+    },2500);
+
+}
+
+
+/* INITIAL */
+
+updateCart();
+
+</script>
+
+</body>
+</html>
